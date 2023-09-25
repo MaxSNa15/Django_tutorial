@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Articulos 2.0
+{% endblock %}
+
+{% block content %}
+    <h1>Formularios de Articulos</h1>
+
+    <form action="{% url "save_article" %}" method="POST">
+        {% csrf_token %}
+        <label for="title">Titulo</label>
+        <input type="text" name="title"  placeholder="Titulo del articulo"/>
+        
+        <label for="content">Contenido</label>
+        <textarea name="content" ></textarea>
+        
+        <label for="public">Publicado?</label>
+        <select name="public">
+            <option value="1">Si</option>
+            <option value="0">No</option>
+        </select>
+        
+        <input type="submit" value="Guardar" />
+    </form>
+
+{% endblock %}

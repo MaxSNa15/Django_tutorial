@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+
+        {% endblock %}
+        | Proyecto Django
+    </title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+    <header>
+        <h1>Proyecto Django</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Inicio</a></li>
+                <li><a href="{% url 'nosotros' %}">Nosotros</a></li>
+                <li><a href="{% url 'contacto' %}">Contacto</a></li>
+                <li><a href="{% url 'articulos' %}">Articulos</a></li>
+                <li><a href="{% url 'create_article' %}">Crear Articulo</a></li>
+                <li><a href="{% url 'full_article' %}">Full Articulo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="conten" id="contenido">
+            {% block content %}
+                <!-- Aqui va el contenido de cada pagina -->
+                <strong>contenido general y original</strong>
+            {% endblock %}
+        </div>
+    </main>
+
+    <footer>
+        <p>Proyecto Django &copy -  2020 </p>
+    </footer>
+
+</body>
+</html>
