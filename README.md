@@ -12,6 +12,7 @@
 - Migrar: `python manage.py migrate`
 - Crear superusuario: `python manage.py createsuperuser`
 - Correr el servidor: `python manage.py runserver`
+- Probar los test: `python manage.py test nombre_app`
 
 ## Configuración
 - settings.py (Cambiar el idioma, la zona horaria, el nombre de la aplicación, etc.)
